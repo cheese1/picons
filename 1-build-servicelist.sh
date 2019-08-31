@@ -132,7 +132,7 @@ if [[ -f $location/build-input/tvheadend.serverconf ]]; then
     channelcount=$(curl -s --anyauth $url'/api/channel/grid?start=0&limit=1' | jq -r '.total' )
 
     if [[ -n $channelcount ]]; then
-        # looping trough the given number of channels and fetch one by one to parse the json object
+        # looping through the given number of channels and fetch one by one to parse the json object
         for ((channel=0; channel<$channelcount; channel++)); do
             if [[ $- == *i* ]]; then
                 echo -ne "TvHeadend (server-mode): Converting channel: $channel/$channelcount"\\r
